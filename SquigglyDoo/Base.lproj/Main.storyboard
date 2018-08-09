@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uMZ-fn-VEW">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxm-Du-0Sl">
+                                <rect key="frame" x="166" y="323" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jxm-Du-0Sl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iur-ML-s9j"/>
+                            <constraint firstItem="jxm-Du-0Sl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="n2U-yH-Ucv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="jxm-Du-0Sl" id="ZuE-Nz-KeH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-95" y="12"/>
+        </scene>
+        <!--Dance View Controller-->
+        <scene sceneID="ByE-Xm-Ffq">
+            <objects>
+                <viewController id="uMZ-fn-VEW" customClass="DanceViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3ax-ZC-tCh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pickle" translatesAutoresizingMaskIntoConstraints="NO" id="pNU-4B-Nh2">
+                                <rect key="frame" x="135" y="83" width="104" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="qio-BY-6C8" appends="YES" id="0oy-nd-v2Q"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <viewLayoutGuide key="safeArea" id="RYD-ay-war"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Fb5-6V-LuP" appends="YES" id="5ZK-cE-AVr"/>
+                            <outletCollection property="gestureRecognizers" destination="3Lb-fQ-tVo" appends="YES" id="6C1-VX-qx6"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="pickleImageView" destination="pNU-4B-Nh2" id="TbL-Eg-cx1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1v5-3w-zc4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="up" id="Fb5-6V-LuP">
+                    <connections>
+                        <action selector="swipeUp:" destination="uMZ-fn-VEW" id="odo-yx-bFd"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="3Lb-fQ-tVo">
+                    <connections>
+                        <action selector="swipeDown:" destination="uMZ-fn-VEW" id="bmU-jK-VF6"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="qio-BY-6C8">
+                    <connections>
+                        <action selector="panAround:" destination="uMZ-fn-VEW" id="MJF-ta-MhK"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="877.60000000000002" y="-6.746626686656672"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pickle" width="530" height="631"/>
+    </resources>
+</document>
